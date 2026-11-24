@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOU Caraguá | Transporte Público de Caraguatatuba — Linhas, Cartão SOU e App em Tempo Real</title>
+  <meta name="description" content="Conheça o sistema SOU Caraguá (SOU Transportes): consulte linhas e horários de Caraguatatuba, faça a 1ª via gratuita do Cartão SOU com integração de 90 min, baixe o App SOU e siga @soutransportes_oficial.">
+  <meta name="theme-color" content="#FFB800">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="SOU Caraguá | Mobilidade Inteligente em Caraguatatuba">
+  <meta property="og:description" content="Ônibus 0km com ar-condicionado, Wi-Fi, tomadas USB e GPS em tempo real. Garanta seu Cartão SOU com integração de 90 minutos.">
+  <meta property="og:image" content="assets/hero-bus-caragua.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/jpeg" href="assets/fav-sou.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top Utility Bar -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__info">
+        <span class="topbar__badge">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          Operação Oficial Caraguatatuba
+        </span>
+        <span class="topbar__text">
+          📍 Guichê Rodoviária de Caraguatatuba: Seg a Sex, 8h às 18h &nbsp;|&nbsp; Tarifa vigente: <strong>R$ 5,00</strong> &nbsp;|&nbsp; <strong>1ª Via do Cartão SOU Gratuita</strong>
+        </span>
+      </div>
+      <div class="topbar__links">
+        <a href="https://www.instagram.com/soutransportes_oficial?knvt=aWY5M2tqZzV4NW4x" target="_blank" rel="noopener noreferrer" class="topbar__link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          @soutransportes_oficial
+        </a>
+        <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer" class="topbar__link topbar__link--highlight">
+          Portal Oficial Caraguá ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Glass Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#topo" class="brand" aria-label="SOU Caraguatatuba - Início">
+        <img src="assets/logo-caragua.png" alt="Logo SOU Caraguatatuba" class="brand__logo">
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#linhas" class="nav__link">Linhas &amp; Horários</a>
+        <a href="#cartao" class="nav__link">Cartão SOU</a>
+        <a href="#simulador" class="nav__link">Simulador</a>
+        <a href="#frota" class="nav__link">Frota &amp; Conforto</a>
+        <a href="#app" class="nav__link">App SOU</a>
+        <a href="#instagram" class="nav__link">Instagram</a>
+        <a href="#atendimento" class="nav__link">Atendimento</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="https://www.instagram.com/soutransportes_oficial?knvt=aWY5M2tqZzV4NW4x" target="_blank" rel="noopener noreferrer" class="btn btn--ghost-ig" title="Seguir @soutransportes_oficial no Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <span class="hide-sm">Instagram</span>
+        </a>
+        <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
+          Acessar Portal Caraguá
+        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer" hidden>
+      <nav class="mobile-drawer__nav" aria-label="Menu mobile">
+        <a href="#linhas" class="mobile-drawer__link">Linhas &amp; Horários</a>
+        <a href="#cartao" class="mobile-drawer__link">Cartão SOU &amp; Modalidades</a>
+        <a href="#simulador" class="mobile-drawer__link">Simulador de Economia</a>
+        <a href="#frota" class="mobile-drawer__link">Frota &amp; Conforto</a>
+        <a href="#app" class="mobile-drawer__link">App SOU em Tempo Real</a>
+        <a href="#instagram" class="mobile-drawer__link">Comunidade @soutransportes_oficial</a>
+        <a href="#atendimento" class="mobile-drawer__link">Atendimento &amp; Dúvidas</a>
+        <div class="mobile-drawer__ctas">
+          <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--block">
+            Consultar Linhas e Cartão SOU ↗
+          </a>
+          <a href="https://www.instagram.com/soutransportes_oficial?knvt=aWY5M2tqZzV4NW4x" target="_blank" rel="noopener noreferrer" class="btn btn--outline-dark btn--block">
+            Seguir @soutransportes_oficial
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero__bg-pattern" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="hero__eyebrow">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Transporte Público Oficial de Caraguatatuba • Frota Climatizada Euro 6
+          </div>
+
+          <h1 class="hero__title">
+            Mobilidade inteligente que conecta <span class="text-gradient">todas as praias e bairros</span> de Caraguá.
+          </h1>
+
+          <p class="hero__subtitle">
+            Viaje com mais conforto e previsibilidade nos ônibus <strong>SOU Caraguá</strong>: frota equipada com <strong>ar-condicionado, Wi-Fi grátis, tomadas USB e 100% acessível</strong>, GPS ao vivo no aplicativo e <strong>Integração Temporal de 90 minutos</strong> com o Cartão SOU.
+          </p>
+
+          <div class="hero__ctas">
+            <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">
+              <span>Consultar Linhas e Cartão SOU</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://www.instagram.com/soutransportes_oficial?knvt=aWY5M2tqZzV4NW4x" target="_blank" rel="noopener noreferrer" class="btn btn--instagram btn--lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <span>Seguir @soutransportes_oficial</span>
+            </a>
+          </div>
+
+          <div class="hero__trust">
+            <div class="trust-pill">
+              <span class="trust-pill__icon">❄️</span>
+              <span>Ar-condicionado e Wi-Fi</span>
+            </div>
+            <div class="trust-pill">
+              <span class="trust-pill__icon">💳</span>
+              <span>1ª via do Cartão Grátis</span>
+            </div>
+            <div class="trust-pill">
+              <span class="trust-pill__icon">⏱️</span>
+              <span>Integração em até 90 min</span>
+            </div>
+            <div class="trust-pill">
+              <span class="trust-pill__icon">♿</span>
+              <span>100% Frota Acessível</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero-card">
+            <div class="hero-card__media">
+              <img src="assets/hero-bus-caragua.jpg" alt="Ônibus moderno amarelo da SOU Caraguá circulando na orla de Caraguatatuba com montanhas da Serra do Mar ao fundo" class="hero-card__img">
+              <div class="hero-card__overlay"></div>
+
+              <!-- Floating Live Status Widget -->
+              <div class="live-widget" id="liveRouteWidget">
+                <div class="live-widget__head">
+                  <span class="live-tag">
+                    <span class="pulse-dot pulse-dot--green" aria-hidden="true"></span>
+                    CIRCULAÇÃO EM CARAGUÁ
+                  </span>
+                  <span class="live-fare">Tarifa R$ 5,00</span>
+                </div>
+                <div class="live-widget__body" id="liveRouteDisplay">
+                  <div class="live-route-code">101</div>
+                  <div class="live-route-info">
+                    <strong>Gaivotas via Martim de Sá / Rodoviária</strong>
+                    <span>Ar-Condicionado • Wi-Fi • USB • GPS Ativo</span>
+                  </div>
+                  <a href="#linhas" class="live-route-action" title="Ver detalhes das linhas">Ver →</a>
+                </div>
+                <div class="live-widget__dots" role="tablist" aria-label="Destaques de linhas">
+                  <button type="button" class="live-dot active" data-route="0" aria-label="Linha 101 Gaivotas"></button>
+                  <button type="button" class="live-dot" data-route="1" aria-label="Linha 306 Tabatinga"></button>
+                  <button type="button" class="live-dot" data-route="2" aria-label="Linha 201 Porto Novo"></button>
+                  <button type="button" class="live-dot" data-route="3" aria-label="Linha 406 Hospital Regional"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Impact Metrics Strip -->
+      <div class="container">
+        <div class="metrics-strip">
+          <div class="metric-item">
+            <div class="metric-item__value">23+</div>
+            <div class="metric-item__label">Linhas municipais conectando Norte, Centro e Sul</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-item__value">90 min</div>
+            <div class="metric-item__label">Integração temporal gratuita no mesmo sentido</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-item__value">100%</div>
+            <div class="metric-item__label">Frota acessível com elevadores e piso tátil</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-item__value">R$ 0,00</div>
+            <div class="metric-item__label">Emissão da 1ª via do Cartão SOU com RG</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Coastal Connection Showcase -->
+    <section class="coastal-strip">
+      <div class="container coastal-strip__grid">
+        <div class="coastal-card">
+          <img src="assets/caragua-martim-de-sa.png" alt="Praia Martim de Sá em Caraguatatuba conectada pelas linhas SOU" loading="lazy">
+          <div class="coastal-card__caption">
+            <span class="tag-pill">Praias &amp; Turismo</span>
+            <h3>Martim de Sá, Tabatinga, Massaguaçu e Prainha</h3>
+            <p>Linhas diretas como 101, 116, 117, 302 e 306 levam moradores e visitantes às principais praias com conforto térmico.</p>
+          </div>
+        </div>
+        <div class="coastal-card">
+          <img src="assets/caragua-rua-da-praia.png" alt="Complexo Turístico da Rua da Praia no Centro de Caraguatatuba" loading="lazy">
+          <div class="coastal-card__caption">
+            <span class="tag-pill tag-pill--blue">Trabalho, Saúde &amp; Estudo</span>
+            <h3>Centro, Rodoviária, Shoppings e Hospitais</h3>
+            <p>Conexões rápidas com o Terminal Rodoviário, UPA Sul, Hospital Regional e escolas em toda a extensão da SP-055.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Lines & Neighborhood Finder -->
+    <section class="section section--light" id="linhas">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Buscador Rápido de Itinerários</span>
+          <h2 class="section-title">Encontre sua linha em Caraguatatuba em segundos</h2>
+          <p class="section-desc">
+            Digite o nome do seu bairro, praia, hospital ou número da linha para consultar os trajetos operados pela <strong>SOU Caraguá</strong> e acessar os horários oficiais.
+          </p>
+        </div>
+
+        <div class="finder-panel">
+          <div class="finder-controls">
+            <div class="search-box">
+              <svg class="search-box__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input
+                type="search"
+                id="lineSearchInput"
+                class="search-box__input"
+                placeholder="Ex.: Martim de Sá, Tabatinga, Porto Novo, Tinga, 101, Hospital..."
+                aria-label="Buscar linha ou bairro em Caraguatatuba"
+              >
+              <button type="button" id="clearSearchBtn" class="search-box__clear" hidden aria-label="Limpar busca">Limpar</button>
+            </div>
+
+            <div class="region-filters" role="group" aria-label="Filtrar por região">
+              <button type="button" class="filter-chip active" data-region="all">Todas (23)</button>
+              <button type="button" class="filter-chip" data-region="centro">Centro &amp; Praias</button>
+              <button type="button" class="filter-chip" data-region="sul">Região Sul</button>
+              <button type="button" class="filter-chip" data-region="norte">Região Norte</button>
+              <button type="button" class="filter-chip" data-region="saude">Saúde &amp; Serviços</button>
+            </div>
+          </div>
+
+          <div class="quick-tags">
+            <span class="quick-tags__label">Mais buscados:</span>
+            <button type="button" class="quick-tag" data-query="Martim de Sá">Martim de Sá</button>
+            <button type="button" class="quick-tag" data-query="Tabatinga">Tabatinga</button>
+            <button type="button" class="quick-tag" data-query="Massaguaçu">Massaguaçu</button>
+            <button type="button" class="quick-tag" data-query="Porto Novo">Porto Novo</button>
+            <button type="button" class="quick-tag" data-query="Morro do Algodão">Morro do Algodão</button>
+            <button type="button" class="quick-tag" data-query="Hospital Regional">Hospital Regional</button>
+            <button type="button" class="quick-tag" data-query="Rodoviária">Rodoviária</button>
+          </div>
+
+          <div class="lines-status" id="linesCountInfo" aria-live="polite">
+            Exibindo as principais linhas municipais de Caraguatatuba
+          </div>
+
+          <div class="lines-grid" id="linesGrid">
+            <!-- Populated dynamically by script.js -->
+          </div>
+
+          <div class="lines-footer">
+            <button type="button" id="toggleAllLinesBtn" class="btn btn--outline-dark">
+              Ver todas as 23 linhas de Caraguá
+            </button>
+            <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+              Consultar Quadros de Horários no Portal Oficial ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cartão SOU & Modalidades -->
+    <section class="section section--cream" id="cartao">
+      <div class="container">
+        <div class="card-hero-banner">
+          <div class="card-hero-banner__text">
+            <span class="section-eyebrow">Bilhetagem Eletrônica SOU</span>
+            <h2 class="section-title">Cartão SOU: 1ª via gratuita e Integração de 90 minutos</h2>
+            <p class="section-desc">
+              Com o Cartão SOU você embarca com agilidade, evita andar com dinheiro trocado e pode pegar um <strong>segundo ônibus no mesmo sentido em até 90 minutos sem pagar nova tarifa</strong>.
+            </p>
+          </div>
+          <div class="card-hero-banner__highlight">
+            <div class="highlight-stat">
+              <span class="highlight-stat__big">90 min</span>
+              <span class="highlight-stat__small">de integração gratuita entre bairros e centro</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cartao-layout">
+          <div class="cartao-visual">
+            <div class="photo-frame">
+              <img src="assets/cartao-sou-embarque.jpg" alt="Passageiro aproximando Cartão SOU amarelo no validador do ônibus em Caraguatatuba" loading="lazy">
+              <div class="photo-frame__badge">
+                <strong>Embarque por aproximação</strong>
+                <span>Praticidade e economia em cada viagem</span>
+              </div>
+            </div>
+
+            <div class="recharge-box">
+              <h3>Onde recarregar seu Cartão SOU?</h3>
+              <ul class="check-list">
+                <li><strong>App SOU Recargas (PIU):</strong> recarga digital pelo celular (compensação em até 72h nos validadores).</li>
+                <li><strong>Guichê na Rodoviária:</strong> Jardim Jaqueira (Seg a Sex, 8h às 18h).</li>
+                <li><strong>Pontos Credenciados:</strong> comércios nos bairros e autoatendimento no <strong>Caraguá Praia Shopping</strong>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cartao-tabs-panel">
+            <div class="tabs-nav" role="tablist" aria-label="Modalidades do Cartão SOU">
+              <button type="button" class="tab-btn active" role="tab" aria-selected="true" data-tab="comum">💳 Cartão Comum</button>
+              <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="escolar">🎓 Escolar</button>
+              <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="vt">🏢 Vale-Transporte</button>
+              <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="especial">♿ Idoso &amp; PcD</button>
+            </div>
+
+            <div class="tab-content active" id="tab-comum" role="tabpanel">
+              <div class="tab-card">
+                <div class="tab-card__header">
+                  <span class="badge-gold">Uso Diário</span>
+                  <h3>Cartão SOU Comum (Cidadão)</h3>
+                </div>
+                <p>Ideal para todos os moradores e trabalhadores de Caraguatatuba. A emissão da <strong>1ª via é gratuita</strong>.</p>
+                <ul class="feature-bullets">
+                  <li><strong>Integração Temporal:</strong> utilize até 2 ônibus no mesmo sentido dentro de 90 minutos pagando apenas R$ 5,00.</li>
+                  <li><strong>Como solicitar:</strong> compareça ao guichê no Terminal Rodoviário de Caraguatatuba com documento oficial com foto (RG) e CPF.</li>
+                  <li><strong>Recarga rápida:</strong> recarregue no guichê, pelo aplicativo SOU Recargas ou nos pontos parceiros PIU pela cidade.</li>
+                </ul>
+                <div class="tab-card__actions">
+                  <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                    Solicitar Informações no Portal SOU ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content" id="tab-escolar" role="tabpanel" hidden>
+              <div class="tab-card">
+                <div class="tab-card__header">
+                  <span class="badge-gold">Estudantes</span>
+                  <h3>Cartão Escolar / Cadastro Estudantil</h3>
+                </div>
+                <p>Facilita o deslocamento diário de estudantes regularmente matriculados em Caraguatatuba conforme legislação municipal vigente.</p>
+                <ul class="feature-bullets">
+                  <li><strong>Formulário Oficial:</strong> baixe o formulário de Cadastro Escolar diretamente no portal oficial da SOU Caraguatatuba.</li>
+                  <li><strong>Intermediação Escolar:</strong> verifique com a secretaria da sua escola ou entregue a documentação exigida para validação de matrícula.</li>
+                  <li><strong>Recadastramento Anual:</strong> mantenha seu benefício ativo renovando o cadastro no início de cada período letivo.</li>
+                </ul>
+                <div class="tab-card__actions">
+                  <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                    Baixar Formulário Cadastro Escolar ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content" id="tab-vt" role="tabpanel" hidden>
+              <div class="tab-card">
+                <div class="tab-card__header">
+                  <span class="badge-gold">Para Empresas &amp; RH</span>
+                  <h3>Vale-Transporte (VT) Corporativo</h3>
+                </div>
+                <p>Solução prática e segura para empresas de Caraguatatuba gerenciarem a compra de créditos e a retirada de cartões dos colaboradores.</p>
+                <ul class="feature-bullets">
+                  <li><strong>Formulários Prontos:</strong> acesse os termos de cadastro de Vale-Transporte e autorização para retirada de cartões VT no portal.</li>
+                  <li><strong>Controle Digital:</strong> agendamento e pedido online para reduzir custos administrativos do RH.</li>
+                  <li><strong>Integração Garantida:</strong> seus colaboradores economizam tempo e dinheiro com a rede completa de 23+ linhas municipais.</li>
+                </ul>
+                <div class="tab-card__actions">
+                  <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                    Acessar Portal Vale-Transporte ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content" id="tab-especial" role="tabpanel" hidden>
+              <div class="tab-card">
+                <div class="tab-card__header">
+                  <span class="badge-gold">Direito &amp; Inclusão</span>
+                  <h3>Cartão Idoso &amp; Especial (PcD)</h3>
+                </div>
+                <p>Garantia de mobilidade digna com <strong>100% da frota equipada com elevadores</strong>, assentos reservados e balaustres táteis.</p>
+                <ul class="feature-bullets">
+                  <li><strong>Gratuidade Assegurada:</strong> conforme legislação aplicável para idosos e pessoas com deficiência elegíveis.</li>
+                  <li><strong>Acessibilidade Embarcada:</strong> espaço dedicado para cadeirantes, cão-guia e sinalização tátil em todos os veículos.</li>
+                  <li><strong>Atendimento Presencial:</strong> orientações sobre documentos e emissão no posto da Rodoviária ou canais da Prefeitura.</li>
+                </ul>
+                <div class="tab-card__actions">
+                  <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                    Ver Orientações no Portal Oficial ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Savings Calculator -->
+        <div class="calculator-box" id="simulador">
+          <div class="calculator-box__left">
+            <span class="badge-dark">Simulador de Economia SOU</span>
+            <h3>Quanto você economiza com a Integração Temporal de 90 minutos?</h3>
+            <p>Descubra o impacto real no seu bolso ao usar o <strong>Cartão SOU</strong> para fazer conexões entre bairros e o Centro sem pagar uma segunda tarifa no mesmo sentido.</p>
+
+            <div class="calc-control">
+              <div class="calc-control__top">
+                <label for="daysPerWeek">Quantos dias por semana você usa ônibus?</label>
+                <strong id="daysLabel">5 dias / semana</strong>
+              </div>
+              <input type="range" id="daysPerWeek" min="1" max="7" value="5" class="calc-slider">
+              <div class="calc-scale"><span>1 dia</span><span>3 dias</span><span>5 dias</span><span>7 dias</span></div>
+            </div>
+
+            <div class="calc-control">
+              <span class="calc-label">Como é o seu deslocamento diário?</span>
+              <div class="calc-options" role="group" aria-label="Tipo de deslocamento">
+                <button type="button" class="calc-option active" data-trips="2">Ida e volta com integração (2 conexões/dia)</button>
+                <button type="button" class="calc-option" data-trips="1">Apenas 1 trecho com integração por dia</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="calculator-box__right">
+            <div class="calc-result-card">
+              <div class="calc-result-card__label">Economia estimada com Cartão SOU</div>
+              <div class="calc-result-card__month" id="monthlySavings">R$ 220,00<span>/mês</span></div>
+              <div class="calc-result-card__year">
+                Isso equivale a <strong id="annualSavings">R$ 2.640,00</strong> economizados por ano!
+              </div>
+              <div class="calc-result-breakdown">
+                <div>
+                  <span>Sem integração</span>
+                  <strong id="costWithout">R$ 440,00/mês</strong>
+                </div>
+                <div>
+                  <span>Com Cartão SOU</span>
+                  <strong id="costWith" class="text-emerald">R$ 220,00/mês</strong>
+                </div>
+              </div>
+              <p class="calc-note">*Cálculo ilustrativo considerando tarifa vigente de R$ 5,00 e 4,4 semanas/mês com aproveitamento da integração de 90 min.</p>
+              <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--block">
+                Quero Meu Cartão SOU Agora ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fleet & Comfort Section -->
+    <section class="section section--navy" id="frota">
+      <div class="container">
+        <div class="section-header section-header--dark">
+          <span class="section-eyebrow">Padrão de Qualidade</span>
+          <h2 class="section-title">Frota moderna projetada para o clima e as ruas de Caraguatatuba</h2>
+          <p class="section-desc">
+            Com renovações recentes e idade média reduzida para cerca de 2 anos, os coletivos da SOU Caraguá oferecem tecnologia Euro 6, conforto térmico e inclusão em cada viagem.
+          </p>
+        </div>
+
+        <div class="fleet-showcase">
+          <div class="fleet-main-visual">
+            <img src="assets/interior-conforto.jpg" alt="Interior moderno e climatizado de ônibus da SOU com tomadas USB, balaústres amarelos e acessibilidade" loading="lazy">
+            <div class="fleet-main-visual__tag">
+              <span>❄️ Climatização &amp; Tecnologia Euro 6</span>
+            </div>
+          </div>
+
+          <div class="fleet-features-grid">
+            <article class="fleet-feature-card">
+              <div class="fleet-icon">❄️</div>
+              <h3>Ar-Condicionado Eficiente</h3>
+              <p>Temperatura agradável o ano inteiro, pensada especialmente para os dias quentes do verão no Litoral Norte.</p>
+            </article>
+
+            <article class="fleet-feature-card">
+              <div class="fleet-icon">🔌</div>
+              <h3>Wi-Fi Grátis &amp; Entradas USB</h3>
+              <p>Navegue e carregue seu smartphone durante o trajeto para o trabalho, faculdade ou praia.</p>
+            </article>
+
+            <article class="fleet-feature-card">
+              <div class="fleet-icon">♿</div>
+              <h3>Acessibilidade 100%</h3>
+              <p>Todos os veículos contam com elevadores para cadeirantes, espaço reservado e balaústres táteis.</p>
+            </article>
+
+            <article class="fleet-feature-card">
+              <div class="fleet-icon">🌿</div>
+              <h3>Motores Euro 6 Sustentáveis</h3>
+              <p>Tecnologia avançada de baixa emissão de poluentes, ajudando a preservar a natureza de Caraguá.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="fleet-secondary-cards">
+          <div class="secondary-photo-card">
+            <img src="assets/back-sou.jpg" alt="Ônibus amarelo padrão SOU Transportes com ar-condicionado e acessibilidade" loading="lazy">
+            <div class="secondary-photo-card__content">
+              <span class="badge-gold">Identidade Visual Padronizada</span>
+              <h3>Frota Amarela de Alta Visibilidade</h3>
+              <p>Ônibus convencionais e micro-ônibus 0km identificados com o padrão amarelo de Caraguatatuba para fácil visualização nos pontos.</p>
+            </div>
+          </div>
+          <div class="secondary-photo-card">
+            <img src="assets/yt-oficina.jpg" alt="Equipe de oficina e manutenção preventiva da SOU Transportes" loading="lazy">
+            <div class="secondary-photo-card__content">
+              <span class="badge-gold">Segurança &amp; Manutenção</span>
+              <h3>Inspeção Diária e Telemetria</h3>
+              <p>Equipe técnica especializada, câmeras embarcadas e vistorias constantes junto à Secretaria de Mobilidade Urbana.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App SOU Section -->
+    <section class="section section--light" id="app">
+      <div class="container app-grid">
+        <div class="app-mockups">
+          <div class="app-mockups__stage">
+            <img src="assets/app-sou.png" alt="Tela do Aplicativo SOU mostrando mapa em tempo real e itinerários" class="app-phone app-phone--front" loading="lazy">
+            <img src="assets/smartphone.png" alt="Planejador de viagem e seleção de cidades no aplicativo SOU" class="app-phone app-phone--back" loading="lazy">
+          </div>
+        </div>
+
+        <div class="app-content">
+          <span class="section-eyebrow">Seu Ônibus na Palma da Mão</span>
+          <h2 class="section-title">Chega de esperar no ponto sem saber a hora que o ônibus passa</h2>
+          <p class="section-desc">
+            Com o aplicativo oficial <strong>SOU – Sistema de Ônibus Urbano</strong>, você acompanha os ônibus de Caraguatatuba em tempo real no mapa, confere o trajeto completo e planeja sua viagem antes de sair de casa.
+          </p>
+
+          <ul class="app-steps">
+            <li>
+              <span class="step-num">1</span>
+              <div>
+                <strong>Localização GPS em Tempo Real</strong>
+                <span>Veja exatamente onde o seu ônibus está e a previsão de chegada no ponto mais próximo.</span>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">2</span>
+              <div>
+                <strong>Grade de Horários e Itinerários</strong>
+                <span>Consulte saídas de dias úteis, sábados, domingos e feriados direto no celular.</span>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">3</span>
+              <div>
+                <strong>Recarga Digital Prática</strong>
+                <span>Adicione créditos pelo App SOU Recargas (PIU) sem precisar enfrentar filas.</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="store-badges">
+            <a href="https://play.google.com/store/apps/details?id=br.com.sou.app&hl=pt_BR&gl=US" target="_blank" rel="noopener noreferrer" class="store-badge-link" aria-label="Baixar aplicativo SOU no Google Play">
+              <img src="assets/google-play.png" alt="Disponível no Google Play">
+            </a>
+            <a href="https://apps.apple.com/br/app/sou-sancetur/id1420163835" target="_blank" rel="noopener noreferrer" class="store-badge-link" aria-label="Baixar aplicativo SOU na App Store">
+              <img src="assets/app-store.png" alt="Baixar na App Store">
+            </a>
+            <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer" class="btn btn--outline-dark">
+              Acessar Portal Web Caraguá ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instagram Community Hub -->
+    <section class="section section--cream" id="instagram">
+      <div class="container">
+        <div class="ig-header-card">
+          <div class="ig-profile">
+            <div class="ig-avatar">
+              <img src="assets/fav-sou.jpg" alt="Perfil oficial @soutransportes_oficial">
+            </div>
+            <div>
+              <div class="ig-handle-row">
+                <strong>@soutransportes_oficial</strong>
+                <span class="ig-verified" title="Canal oficial">✓ Oficial</span>
+              </div>
+              <p>Acompanhe novidades da frota, avisos de linhas, campanhas educativas e bastidores do transporte urbano.</p>
+            </div>
+          </div>
+          <a href="https://www.instagram.com/soutransportes_oficial?knvt=aWY5M2tqZzV4NW4x" target="_blank" rel="noopener noreferrer" class="btn btn--instagram btn--lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            Seguir no Instagram
+          </a>
+        </div>
+
+        <div class="ig-feed-grid">
+          <a href="https://www.instagram.com/soutransportes_oficial?knvt=aWY5M2tqZzV4NW4x" target="_blank" rel="noopener noreferrer" class="ig-post">
+            <img src="assets/hero-bus-caragua.jpg" alt="Frota amarela SOU Caraguá conectando a cidade" loading="lazy">
+            <div class="ig-post__overlay">
+              <span class="ig-post__tag">Frota Renovada</span>
+              <p>Veículos equipados com ar-condicionado, Wi-Fi e entradas USB pelas ruas de Caraguá.</p>
+              <span class="ig-post__cta">Ver no Instagram →</span>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/soutransportes_oficial?knvt=aWY5M2tqZzV4NW4x" target="_blank" rel="noopener noreferrer" class="ig-post">
+            <img src="assets/yt-app.jpg" alt="Aplicativo SOU - Baixe Agora" loading="lazy">
+            <div class="ig-post__overlay">
+              <span class="ig-post__tag">#AppSOU</span>
+              <p>Acompanhe horários e localização do seu ônibus em tempo real direto no smartphone.</p>
+              <span class="ig-post__cta">Ver no Instagram →</span>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/soutransportes_oficial?knvt=aWY5M2tqZzV4NW4x" target="_blank" rel="noopener noreferrer" class="ig-post">
+            <img src="assets/caragua-martim-de-sa.png" alt="Conexão com as praias de Caraguatatuba" loading="lazy">
+            <div class="ig-post__overlay">
+              <span class="ig-post__tag">Caraguatatuba</span>
+              <p>De Tabatinga ao Porto Novo: mobilidade conectando bairros, praias e trabalho.</p>
+              <span class="ig-post__cta">Ver no Instagram →</span>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/soutransportes_oficial?knvt=aWY5M2tqZzV4NW4x" target="_blank" rel="noopener noreferrer" class="ig-post">
+            <img src="assets/mulher.jpg" alt="Passageira planejando viagem pelo celular com App SOU" loading="lazy">
+            <div class="ig-post__overlay">
+              <span class="ig-post__tag">Dica do Passageiro</span>
+              <p>Use o Cartão SOU e aproveite até 90 minutos de integração temporal gratuita!</p>
+              <span class="ig-post__cta">Ver no Instagram →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Desk & FAQ -->
+    <section class="section section--light" id="atendimento">
+      <div class="container support-grid">
+        <div class="support-card">
+          <span class="section-eyebrow">Atendimento &amp; Pontos Físicos</span>
+          <h2>Guichê Oficial SOU Caraguatatuba</h2>
+          <p class="support-card__intro">Precisa emitir a 1ª via gratuita do Cartão SOU, tirar dúvidas sobre cadastro escolar, vale-transporte ou recarregar presencialmente?</p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <span class="info-item__icon">📍</span>
+              <div>
+                <strong>Endereço do Posto / Guichê</strong>
+                <p>Terminal Rodoviário de Caraguatatuba/SP — Rua Primeiro Centenário dos Batistas, s/n (Av. Brasília), Bairro Jardim Jaqueira (guichê ao lado do bicicletário).</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <span class="info-item__icon">🕒</span>
+              <div>
+                <strong>Horário de Atendimento Presencial</strong>
+                <p>Segunda a sexta-feira, das <strong>8h às 18h</strong>.</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <span class="info-item__icon">💳</span>
+              <div>
+                <strong>Pontos Adicionais de Recarga</strong>
+                <p>Terminais de autoatendimento no <strong>Caraguá Praia Shopping</strong>, rede de comércios credenciados <strong>PIU</strong> e App SOU Recargas.</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <span class="info-item__icon">💬</span>
+              <div>
+                <strong>SAC &amp; Atendimento Online</strong>
+                <p>Atendimento via WhatsApp/SAC <strong>0800 460 0800</strong> e chat de suporte no portal oficial SOU Caraguatatuba.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="support-card__ctas">
+            <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--block">
+              Acessar Atendimento Oficial SOU Caraguá ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="faq-panel">
+          <span class="section-eyebrow">Perguntas Frequentes</span>
+          <h2>Tire suas dúvidas rapidamente</h2>
+
+          <div class="faq-list" id="faqList">
+            <div class="faq-item active">
+              <button type="button" class="faq-question" aria-expanded="true">
+                <span>Como faço para tirar a 1ª via gratuita do Cartão SOU?</span>
+                <span class="faq-chevron" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>A 1ª via do Cartão SOU Comum é gratuita. Basta comparecer ao guichê da SOU localizado no Terminal Rodoviário de Caraguatatuba (Jardim Jaqueira, ao lado do bicicletário), de segunda a sexta-feira, das 8h às 18h, levando seu documento de identidade original (RG) e CPF.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span>Como funciona a Integração Temporal de 90 minutos?</span>
+                <span class="faq-chevron" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Ao pagar a passagem com o Cartão SOU, você tem direito a embarcar em um segundo ônibus no mesmo sentido da viagem dentro de até 90 minutos sem pagar uma nova tarifa. Isso permite conectar bairros distantes ao Centro, escolas e praias pagando apenas uma passagem (R$ 5,00).</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span>Como recarregar o cartão pelo celular e qual o prazo de liberação?</span>
+                <span class="faq-chevron" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Você pode recarregar digitalmente pelo aplicativo SOU Recargas (rede parceira PIU). Como os validadores nos ônibus sincronizam os créditos durante a operação, recargas digitais têm prazo de compensação de até 72 horas. Se precisar do crédito na hora, recarregue no guichê da Rodoviária ou nos pontos credenciados com terminal online.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span>Onde consulto os horários atualizados das linhas de Caraguá?</span>
+                <span class="faq-chevron" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Você pode acompanhar o itinerário e a previsão de chegada em tempo real pelo aplicativo SOU – Sistema de Ônibus Urbano (Android e iOS) ou consultar as tabelas completas acessando o portal oficial <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer">soutransportes.com.br/caraguatatuba/</a>.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span>Como funciona o Cadastro Escolar e o Vale-Transporte (VT)?</span>
+                <span class="faq-chevron" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>No portal oficial da SOU Caraguatatuba estão disponíveis os formulários de Cadastro Escolar, Retirada de Cartões VT e compra de Vale-Transporte para empresas. Estudantes também devem validar a matrícula junto à secretaria da sua instituição de ensino conforme o calendário escolar.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span>Os ônibus possuem ar-condicionado, Wi-Fi e acessibilidade?</span>
+                <span class="faq-chevron" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Sim! A frota renovada da SOU Caraguá conta com ar-condicionado, Wi-Fi gratuito, tomadas USB para recarga de celulares, motores Euro 6 de baixa emissão e 100% de acessibilidade com elevadores para cadeirantes e balaustres táteis.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final High-Conversion CTA Banner -->
+    <section class="cta-final">
+      <div class="container">
+        <div class="cta-final__box">
+          <div class="cta-final__content">
+            <span class="badge-gold">Pronto para viajar melhor em Caraguá?</span>
+            <h2>Consulte sua linha, garanta seu Cartão SOU e conecte-se com a gente</h2>
+            <p>Acesse o portal oficial da SOU Caraguatatuba para horários, formulários e atendimento, e siga o perfil oficial no Instagram para ficar por dentro de todas as novidades.</p>
+            <div class="cta-final__actions">
+              <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">
+                Acessar SOU Caraguatatuba Agora ↗
+              </a>
+              <a href="https://www.instagram.com/soutransportes_oficial?knvt=aWY5M2tqZzV4NW4x" target="_blank" rel="noopener noreferrer" class="btn btn--instagram btn--lg">
+                Seguir @soutransportes_oficial
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="assets/logo-6.png" alt="Logo SOU Transportes" class="footer__logo">
+        <p><strong>SOU Caraguá</strong> — Sistema de Ônibus Urbano de Caraguatatuba/SP (Grupo SOU / Sancetur). Mobilidade moderna, acessível e conectada em todo o município.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/soutransportes_oficial?knvt=aWY5M2tqZzV4NW4x" target="_blank" rel="noopener noreferrer" class="footer-social-pill">
+            Instagram @soutransportes_oficial ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#linhas">Linhas &amp; Itinerários</a></li>
+          <li><a href="#cartao">Cartão SOU &amp; Modalidades</a></li>
+          <li><a href="#simulador">Simulador de Economia</a></li>
+          <li><a href="#frota">Diferenciais da Frota</a></li>
+          <li><a href="#app">Aplicativo SOU</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Links Oficiais</h4>
+        <ul>
+          <li><a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer">Portal SOU Caraguatatuba ↗</a></li>
+          <li><a href="https://www.instagram.com/soutransportes_oficial?knvt=aWY5M2tqZzV4NW4x" target="_blank" rel="noopener noreferrer">Instagram Oficial ↗</a></li>
+          <li><a href="https://play.google.com/store/apps/details?id=br.com.sou.app&hl=pt_BR&gl=US" target="_blank" rel="noopener noreferrer">App no Google Play ↗</a></li>
+          <li><a href="https://apps.apple.com/br/app/sou-sancetur/id1420163835" target="_blank" rel="noopener noreferrer">App na App Store ↗</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Atendimento Presencial</h4>
+        <p class="footer__address">
+          Terminal Rodoviário de Caraguatatuba<br>
+          Rua Primeiro Centenário dos Batistas, s/n — Jardim Jaqueira<br>
+          (Guichê ao lado do bicicletário)<br><br>
+          <strong>Seg a Sex:</strong> 8h às 18h<br>
+          <strong>Tarifa Vigente:</strong> R$ 5,00
+        </p>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© 2026 SOU Caraguá / SOU Transportes — Landing Page promocional informativa com links oficiais de Caraguatatuba/SP.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Quick Conversion Bar -->
+  <div class="floating-dock" aria-label="Atalhos rápidos">
+    <a href="https://www.instagram.com/soutransportes_oficial?knvt=aWY5M2tqZzV4NW4x" target="_blank" rel="noopener noreferrer" class="dock-btn dock-btn--ig" title="Seguir @soutransportes_oficial">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      <span>Instagram</span>
+    </a>
+    <a href="https://soutransportes.com.br/caraguatatuba/" target="_blank" rel="noopener noreferrer" class="dock-btn dock-btn--portal" title="Abrir Portal Oficial SOU Caraguá">
+      <span>Portal Caraguá</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
